@@ -1,0 +1,112 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Conan install (Debug)",
+      "type": "shell",
+      "command": "conan",
+      "args": [
+        "install", // the 'conan install' command
+        ".", // path to conanfile (root)
+        "--output-folder=build/debug",
+        "-s",
+        "build_type=Debug",
+        "--build=missing"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake configure (Debug)",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-B",
+        "build/debug", // build folder
+        "-S",
+        ".", // source folder
+        "-DCMAKE_TOOLCHAIN_FILE=build/debug/conan_toolchain.cmake",
+        "-DCMAKE_BUILD_TYPE=Debug"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake build (Debug)",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "build/debug"
+      ],
+      "problemMatcher": []
+    },
+    {
+      // A convenience task to run all 3 steps in sequence
+      "label": "Build Debug (All Steps)",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Done building Debug"
+      ],
+      "dependsOn": [
+        "Conan install (Debug)",
+        "CMake configure (Debug)",
+        "CMake build (Debug)"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "Conan install (Release)",
+      "type": "shell",
+      "command": "conan",
+      "args": [
+        "install",
+        ".",
+        "--output-folder=build/release",
+        "-s",
+        "build_type=Release",
+        "--build=missing"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake configure (Release)",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "-B",
+        "build/release",
+        "-S",
+        ".",
+        "-DCMAKE_TOOLCHAIN_FILE=build/release/conan_toolchain.cmake",
+        "-DCMAKE_BUILD_TYPE=Release"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "CMake build (Release)",
+      "type": "shell",
+      "command": "cmake",
+      "args": [
+        "--build",
+        "build/release"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Build Release (All Steps)",
+      "type": "shell",
+      "command": "echo",
+      "args": [
+        "Done building Release"
+      ],
+      "dependsOn": [
+        "Conan install (Release)",
+        "CMake configure (Release)",
+        "CMake build (Release)"
+      ],
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[requires]
+glfw/3.3.8
+glad/0.1.36
+assimp/5.2.5
+stb/cci.20230920
+
+[options]
+assimp/*:shared=True
+
+[generators]
+CMakeDeps
+CMakeToolchain
