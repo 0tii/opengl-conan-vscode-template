@@ -2,12 +2,12 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Conan install (Debug)",
+      "label": "Install (Debug)",
       "type": "shell",
       "command": "conan",
       "args": [
-        "install", // the 'conan install' command
-        ".", // path to conanfile (root)
+        "install",
+        ".",
         "--output-folder=build/debug",
         "-s",
         "build_type=Debug",
@@ -16,21 +16,17 @@
       "problemMatcher": []
     },
     {
-      "label": "CMake configure (Debug)",
+      "label": "Configure (Debug)",
       "type": "shell",
       "command": "cmake",
       "args": [
-        "-B",
-        "build/debug", // build folder
-        "-S",
-        ".", // source folder
-        "-DCMAKE_TOOLCHAIN_FILE=build/debug/conan_toolchain.cmake",
-        "-DCMAKE_BUILD_TYPE=Debug"
+        "--preset",
+        "conan-default"
       ],
       "problemMatcher": []
     },
     {
-      "label": "CMake build (Debug)",
+      "label": "Build (Debug)",
       "type": "shell",
       "command": "cmake",
       "args": [
@@ -40,73 +36,25 @@
       "problemMatcher": []
     },
     {
-      // A convenience task to run all 3 steps in sequence
-      "label": "Build Debug (All Steps)",
+      "label": "Full Build Debug (All Steps)",
       "type": "shell",
-      "command": "echo",
-      "args": [
-        "Done building Debug"
-      ],
       "dependsOn": [
-        "Conan install (Debug)",
-        "CMake configure (Debug)",
-        "CMake build (Debug)"
+        "Install (Debug)",
+        "Configure (Debug)",
+        "Build (Debug)"
       ],
       "dependsOrder": "sequence",
       "problemMatcher": []
     },
     {
-      "label": "Conan install (Release)",
+      "label": "Configure and Build (Debug)",
       "type": "shell",
-      "command": "conan",
-      "args": [
-        "install",
-        ".",
-        "--output-folder=build/release",
-        "-s",
-        "build_type=Release",
-        "--build=missing"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "CMake configure (Release)",
-      "type": "shell",
-      "command": "cmake",
-      "args": [
-        "-B",
-        "build/release",
-        "-S",
-        ".",
-        "-DCMAKE_TOOLCHAIN_FILE=build/release/conan_toolchain.cmake",
-        "-DCMAKE_BUILD_TYPE=Release"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "CMake build (Release)",
-      "type": "shell",
-      "command": "cmake",
-      "args": [
-        "--build",
-        "build/release"
-      ],
-      "problemMatcher": []
-    },
-    {
-      "label": "Build Release (All Steps)",
-      "type": "shell",
-      "command": "echo",
-      "args": [
-        "Done building Release"
-      ],
       "dependsOn": [
-        "Conan install (Release)",
-        "CMake configure (Release)",
-        "CMake build (Release)"
+        "Configure (Debug)",
+        "Build (Debug)"
       ],
       "dependsOrder": "sequence",
       "problemMatcher": []
-    }
+    },
   ]
 }

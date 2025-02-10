@@ -1,0 +1,16 @@
+{
+    "recommendations": [
+        "slevesque.vscode-3dviewer", // 3d viewer for many object formats right in vscode
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "twxs.cmake",
+        "ms-vscode.cmake-tools",
+        "cheshirekow.cmake-format",
+        "usernamehw.errorlens",
+        "PKief.material-icon-theme", // for custom file icons e.g. conanfile
+        "raczzalan.webgl-glsl-editor",
+        "konicy.conan-extension",
+        "spencerwmiles.vscode-task-buttons",
+        "davehart.quick-run-panel"
+    ]
+}

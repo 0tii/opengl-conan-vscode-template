@@ -2,26 +2,28 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "xc0n Debug",
+      "name": "Full Debug",
       "type": "cppvsdbg",
       "request": "launch",
       "program": "${workspaceFolder}/build/debug/Debug/xc0n.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}/build",
+      "cwd": "${workspaceFolder}/build/debug/Debug",
       "environment": [],
       "console": "externalTerminal",
+      "preLaunchTask": "Configure and Build (Debug)"
     },
     {
-      "name": "xc0n Release X0V",
+      "name": "Debug",
       "type": "cppvsdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/release/Debug/xc0n.exe",
+      "program": "${workspaceFolder}/build/debug/Debug/GlTemplate.exe",
       "args": [],
       "stopAtEntry": false,
-      "cwd": "${workspaceFolder}/build",
+      "cwd": "${workspaceFolder}/build/debug/Debug",
       "environment": [],
       "console": "externalTerminal",
-    }
+      "preLaunchTask": "Build (Debug)"
+    },
   ]
 }

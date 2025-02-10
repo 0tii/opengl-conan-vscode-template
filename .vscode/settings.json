@@ -1,25 +1,24 @@
 {
     "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#aee2b2",
-        "activityBar.background": "#aee2b2",
-        "activityBar.foreground": "#15202b",
-        "activityBar.inactiveForeground": "#15202b99",
-        "activityBarBadge.background": "#8f8ad5",
-        "activityBarBadge.foreground": "#15202b",
-        "commandCenter.border": "#15202b99",
-        "sash.hoverBorder": "#aee2b2",
-        "statusBar.background": "#88d58e",
-        "statusBar.foreground": "#15202b",
-        "statusBarItem.hoverBackground": "#62c86a",
-        "statusBarItem.remoteBackground": "#88d58e",
-        "statusBarItem.remoteForeground": "#15202b",
-        "titleBar.activeBackground": "#88d58e",
-        "titleBar.activeForeground": "#15202b",
-        "titleBar.inactiveBackground": "#88d58e99",
-        "titleBar.inactiveForeground": "#15202b99"
+        "activityBar.activeBackground": "#3c3fae",
+        "activityBar.background": "#3c3fae",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#2f1011",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#e7e7e799",
+        "sash.hoverBorder": "#3c3fae",
+        "statusBar.background": "#2f3188",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#3c3fae",
+        "statusBarItem.remoteBackground": "#2f3188",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "titleBar.activeBackground": "#2f3188",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.inactiveBackground": "#2f318899",
+        "titleBar.inactiveForeground": "#e7e7e799"
     },
-    "peacock.color": "#88d58e",
-    "WorkspaceFolder": "H:/xc0n/Projects/prototype1",
+    "peacock.color": "#2f3188",
     "errorLens.gutterIconsEnabled": true,
     "errorLens.gutterIconSet": "default",
     "C_Cpp.intelliSenseMemoryLimit": 4096,
@@ -38,9 +37,26 @@
     },
     "material-icon-theme.files.associations": {
         "conanfile.txt": "parcel",
+        "conanfile.py": "parcel",
+        "CMakeUserPresets.json": "cmake"
     },
     "files.associations": {
         "ostream": "cpp"
     },
-    "makefile.configureOnOpen": false
+    "makefile.configureOnOpen": false,
+    "VsCodeTaskButtons.tasks": [
+        {
+            "label": "🏭 Install (Debug)",
+            "task": "Install (Debug)",
+        },
+        {
+            "label": "⚙️ Configure (Debug)",
+            "task": "Configure (Debug)",
+        },
+        {
+            "label": "🛠️ Build (Debug)",
+            "task": "Build (Debug)",
+        },
+    ],
+    "QuickRunPanel.includeTasks": false
 }
