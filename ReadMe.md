@@ -45,8 +45,8 @@ Then select your preferred launch option and hit F5.
 If you just want to run your last build, select the corresponding launch option in the `Run and Debug` menu and hit F5.
 
 ## Screenshots
-
-The features displayed require you to install the recommended extensions
+> [!NOTE]
+> The features displayed require you to install the recommended extensions
 
 ### Task Buttons in Activity Bar
 
