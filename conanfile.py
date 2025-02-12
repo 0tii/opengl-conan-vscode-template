@@ -15,6 +15,7 @@ class GlTemplate(ConanFile):
         self.requires("stb/cci.20230920")
         self.requires("imgui/1.89.9")
         self.requires("glew/2.2.0")
+        self.requires("glm/1.0.1")
 
     def configure(self):
         self.options["assimp"].shared = True

@@ -16,6 +16,7 @@ find_package(glad REQUIRED)
 find_package(assimp REQUIRED)
 find_package(stb REQUIRED)
 find_package(imgui REQUIRED)
+find_package(glm REQUIRED)
 
 # local source files
 file(GLOB_RECURSE PROJECT_SOURCES src/*.cpp)
@@ -30,7 +31,7 @@ target_include_directories(GlTemplate PUBLIC ${CMAKE_SOURCE_DIR}/src)
 target_include_directories(GlTemplate PRIVATE ${CMAKE_BINARY_DIR}/include/imgui)
 
 
-target_link_libraries(GlTemplate PRIVATE glfw glad::glad stb::stb assimp::assimp imgui::imgui)
+target_link_libraries(GlTemplate PRIVATE glfw glad::glad stb::stb assimp::assimp imgui::imgui glm::glm)
 
 if (WIN32)
     target_link_libraries(GlTemplate PRIVATE opengl32)
